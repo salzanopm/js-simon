@@ -51,6 +51,39 @@ randomNumbersArray.forEach((element) => {
 });
 
 // metto u  timer di 30 secondi
+// setTimeout(myFunction, 3000);
+// function myFunction() {
+
+//     // metto alert che segna la fine dei 30 secondi
+//     alert('sono passati 30 secondi inserisci i numeri');
+    
+//     // faccio ciclo while così che per ogni ciclo prendo numero immesso dall'utente vengano inseriti in un array
+//     let n = 0;
+
+//     while (n !== 5) {
+//     let UserNumbers = parseInt(prompt('immetti numero'));
+//     userNumberArray.forEach((element) => {
+//         if (UserNumbers === element) {
+//             rightNumbersArray.push(UserNumbers);          
+//         } else {
+//             wrongNumbersArray.push(UserNumbers);
+//         }
+//     });
+    
+//     // incremento while
+//     n++;
+
+    
+   
+//     // console.log(UserNumberArray);
+//     };
+// }
+// console.log(rightNumbersArray)
+// console.log(wrongNumbersArray)
+   
+//------------------------------------------------------------------------------------------
+
+// ALTERNATIVA
 setTimeout(myFunction, 3000);
 function myFunction() {
 
@@ -62,40 +95,29 @@ function myFunction() {
 
     while (n !== 5) {
     let UserNumbers = prompt('immetti numero');
-    userNumberArray.forEach((element) => {
-        if (UserNumbers === element) {
-            rightNumbersArray.push(UserNumbers);          
-        } else {
-            wrongNumbersArray.push(UserNumbers);
-        }
-    });
-    
-    
+    userNumberArray.push(parseInt(UserNumbers))
+    // incremento while
     n++;
-
-    // inserisco valori immessi dentro array userNumbersArray
-   
     // console.log(UserNumberArray);
     };
+    console.log(userNumberArray)
+
+
+    
+
 }
-console.log(rightNumbersArray)
-console.log(wrongNumbersArray)
-    // filtro l'array creato prendendo solo numeri che coincidono al randomNumbersArray 
 
-//     const rightNumbersArray = UserNumberArray.filter((element) => {
-//         if (element=randomNumbersArray) {
-//             return console.log(element)
-            
-//         } 
-
-//         return console.log(element)
-//     });
-// }
-
-
-
-
-
+// confronto i due array 
+userNumberArray.forEach((element) => {
+    console.log(element)
+    // for(let i =0; i < userNumberArray.length;i++)
+    
+    //  if (element === randomNumbersArray[i]) {
+    //      rightNumbersArray.push(element);          
+    //  } else {
+    //      wrongNumbersArray.push(element);
+    //  }
+ });
  
 
 
