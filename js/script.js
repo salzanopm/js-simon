@@ -27,7 +27,12 @@
 const randomNumbersArray = [];
 
 // creo array vuota da mettere valori user
-const UserNumberArray = [];
+let userNumberArray = [];
+
+let rightNumbersArray = [];
+
+let wrongNumbersArray = [];
+
 // ritorna un numero random da 1 a 10:
 for (let i = 0; i < 5; i++) {
     randomNumbersArray.push(Math.floor(Math.random() * 10))
@@ -46,23 +51,46 @@ randomNumbersArray.forEach((element) => {
 });
 
 // metto u  timer di 30 secondi
-setTimeout(myFunction, 3000)
+setTimeout(myFunction, 3000);
 function myFunction() {
 
-    metto alert che segna la fine dei 0
-    alert('sono passati 30 secondi inserisci i numeri')
+    // metto alert che segna la fine dei 30 secondi
+    alert('sono passati 30 secondi inserisci i numeri');
     
-    
+    // faccio ciclo while così che per ogni ciclo prendo numero immesso dall'utente vengano inseriti in un array
     let n = 0;
 
     while (n !== 5) {
-    let UserNumberArray = prompt('immetti numero')
-    n++
+    let UserNumbers = prompt('immetti numero');
+    userNumberArray.forEach((element) => {
+        if (UserNumbers === element) {
+            rightNumbersArray.push(UserNumbers);          
+        } else {
+            wrongNumbersArray.push(UserNumbers);
+        }
+    });
+    
+    
+    n++;
 
     // inserisco valori immessi dentro array userNumbersArray
-    }
-
+   
+    // console.log(UserNumberArray);
+    };
 }
+console.log(rightNumbersArray)
+console.log(wrongNumbersArray)
+    // filtro l'array creato prendendo solo numeri che coincidono al randomNumbersArray 
+
+//     const rightNumbersArray = UserNumberArray.filter((element) => {
+//         if (element=randomNumbersArray) {
+//             return console.log(element)
+            
+//         } 
+
+//         return console.log(element)
+//     });
+// }
 
 
 
