@@ -12,12 +12,11 @@
 
 // [x] prendere funzione random
 // [x] creare un array da inserire 5 numeri random
-// [] collegarli al rispettivo alert tramite variabile
-// [] mettere timer di 30 secondi
-// [] fermare timer di trenta secondi tramite clear
-// [] chiedere all'utente tramite 5 prompt di inserire i numeri che si ricorda
-// [] confronta i 5 numeri dell'user con quelli dell'array
-// [] segnala all'utente tramite un alert quanti e quali numeri ha indovinato
+// [x] collegarli al rispettivo alert tramite variabile
+// [x] mettere timer di 30 secondi
+// [x] chiedere all'utente tramite 5 prompt di inserire i numeri che si ricorda
+// [x] confronta i 5 numeri dell'user con quelli dell'array
+// [x] segnala all'utente tramite un alert quanti e quali numeri ha indovinato
 
 // ---------------------------------------------------------------------------------------------------------------
 
@@ -51,39 +50,6 @@ randomNumbersArray.forEach((element) => {
 });
 
 // metto u  timer di 30 secondi
-// setTimeout(myFunction, 3000);
-// function myFunction() {
-
-//     // metto alert che segna la fine dei 30 secondi
-//     alert('sono passati 30 secondi inserisci i numeri');
-    
-//     // faccio ciclo while così che per ogni ciclo prendo numero immesso dall'utente vengano inseriti in un array
-//     let n = 0;
-
-//     while (n !== 5) {
-//     let UserNumbers = parseInt(prompt('immetti numero'));
-//     userNumberArray.forEach((element) => {
-//         if (UserNumbers === element) {
-//             rightNumbersArray.push(UserNumbers);          
-//         } else {
-//             wrongNumbersArray.push(UserNumbers);
-//         }
-//     });
-    
-//     // incremento while
-//     n++;
-
-    
-   
-//     // console.log(UserNumberArray);
-//     };
-// }
-// console.log(rightNumbersArray)
-// console.log(wrongNumbersArray)
-   
-//------------------------------------------------------------------------------------------
-
-// ALTERNATIVA
 setTimeout(myFunction, 3000);
 function myFunction() {
 
@@ -94,31 +60,30 @@ function myFunction() {
     let n = 0;
 
     while (n !== 5) {
-    let UserNumbers = prompt('immetti numero');
-    userNumberArray.push(parseInt(UserNumbers))
+    let userNumbers = parseInt(prompt('immetti numero'));
+    
+    if (randomNumbersArray.includes(userNumbers)) {
+        rightNumbersArray.push(userNumbers)
+    } else {
+        wrongNumbersArray.push(userNumbers)
+    }
+
     // incremento while
     n++;
+
+    
+   
     // console.log(UserNumberArray);
     };
-    console.log(userNumberArray)
-
-
-    
-
+    // messaggio finale che avvisa quanti e quali numeri ha indovinato l'user
+    alert(`hai indovinato ${rightNumbersArray.length} numeri`)
+    alert(`i numeri che hai indovinato sono i seguenti: ${rightNumbersArray}`)
 }
 
-// confronto i due array 
-userNumberArray.forEach((element) => {
-    console.log(element)
-    // for(let i =0; i < userNumberArray.length;i++)
-    
-    //  if (element === randomNumbersArray[i]) {
-    //      rightNumbersArray.push(element);          
-    //  } else {
-    //      wrongNumbersArray.push(element);
-    //  }
- });
- 
+// controllo array numeri giusti e sbagliati
+console.log(rightNumbersArray)
+console.log(wrongNumbersArray)
+
 
 
 
